@@ -2,12 +2,15 @@ package country.mhuszics.layoutdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 showPopUp(view);
                 break;
             case R.id.btnAlertDialog:
-                showAlertDialog("This is the alert dialog message");
+                showAlertDialog(getResources().getString(R.string.alert_dlg_msg));
                 break;
         }
     }
@@ -45,6 +48,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showAlertDialog(String msg){
-
+        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
+        alertBuilder.setTitle(getResources().getString(R.string.alert_dlg_title));
+        alertBuilder.setMessage(msg);
+        alertBuilder.setNeutralButton(getResources().getString(R.string.alert_neutral_btn_text),
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this, getResources().getString(R.string.alert_toast_msg), Toast.LENGTH_LONG).show();
+                    }
+                });
+        alertBuilder.show();
     }
 }

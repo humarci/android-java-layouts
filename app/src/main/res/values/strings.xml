@@ -4,4 +4,8 @@
     <string name="btn_alert">AlertDialog</string>
     <string name="btn_inside_popup">New button</string>
     <string name="tv_inside_popup">Large text</string>
+    <string name="alert_dlg_msg">This is a message from alert dialog</string>
+    <string name="alert_dlg_title">Title of alert dialog</string>
+    <string name="alert_neutral_btn_text">Ok</string>
+    <string name="alert_toast_msg">You hit the OK button from alert dialog...</string>
 </resources>

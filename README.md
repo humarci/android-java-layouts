@@ -105,7 +105,7 @@ Create the `popuptest.XML` in layout resource:
 In `MainActivity.java` write the `showPopUp` method:
 ```Java
 private void showPopUp(View view){
-        LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+    LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
         final View popUpView = layoutInflater.inflate(R.layout.popuptest, null);
         final PopupWindow popupWindow = new PopupWindow(popUpView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
@@ -120,3 +120,36 @@ private void showPopUp(View view){
         popupWindow.showAsDropDown(view, 50, 50);
     }
 ```
+# 👉 Step 5:
+Lets write the `showAlertDialog` method:
+```JAVA
+ private void showAlertDialog(String msg){
+        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
+        alertBuilder.setTitle(getResources().getString(R.string.alert_dlg_title));
+        alertBuilder.setMessage(msg);
+        alertBuilder.setNeutralButton(getResources().getString(R.string.alert_neutral_btn_text),
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this, getResources().getString(R.string.alert_toast_msg), Toast.LENGTH_LONG).show();
+                    }
+                });
+        alertBuilder.show();
+    }
+```
+add some strings to `strings.xml`:
+```XML
+<resources>
+    <string name="app_name">LayoutDemo</string>
+    <string name="btn_popup">PopUp</string>
+    <string name="btn_alert">AlertDialog</string>
+    <string name="btn_inside_popup">New button</string>
+    <string name="tv_inside_popup">Large text</string>
+    <string name="alert_dlg_msg">This is a message from alert dialog</string>
+    <string name="alert_dlg_title">Title of alert dialog</string>
+    <string name="alert_neutral_btn_text">Ok</string>
+    <string name="alert_toast_msg">You hit the OK button from alert dialog...</string>
+</resources>
+```
+
+That's all, try it!
