@@ -101,3 +101,22 @@ Create the `popuptest.XML` in layout resource:
         android:layout_gravity="center_horizontal"/>
 </LinearLayout>
 ```
+# 👉 Step 4:
+In `MainActivity.java` write the `showPopUp` method:
+```Java
+private void showPopUp(View view){
+        LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+        final View popUpView = layoutInflater.inflate(R.layout.popuptest, null);
+        final PopupWindow popupWindow = new PopupWindow(popUpView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        Button button = (Button) popUpView.findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
+
+        popupWindow.showAsDropDown(view, 50, 50);
+    }
+```
