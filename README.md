@@ -46,8 +46,8 @@ android:onClick="onClick"
 Use onClick in `MainActivity.java`:
 ```JAVA
 public void onClick(View view){
-        switch (view.getId()) {
-            case R.id.btnPopUp:
+    switch (view.getId()) {
+        case R.id.btnPopUp:
                 showPopUp(view);
                 break;
             case R.id.btnAlertDialog:
@@ -60,12 +60,44 @@ public void onClick(View view){
 Create the methods:
 ```JAVA
 private void showPopUp(View view){
-        LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+    LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
         //final View popUpView = layoutInflater.inflate(R.id.popUpTest, null);
 
     }
 
     private void showAlertDialog(String msg){
+        
+        }
+```
+# 👉 Step 3:
+Create the `popuptest.XML` in layout resource:
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/holo_blue_dark">
 
-    }
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_inside_popup"
+        android:layout_gravity="center_horizontal"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_inside_popup"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>
 ```

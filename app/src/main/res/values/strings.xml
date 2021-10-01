@@ -2,4 +2,6 @@
     <string name="app_name">LayoutDemo</string>
     <string name="btn_popup">PopUp</string>
     <string name="btn_alert">AlertDialog</string>
+    <string name="btn_inside_popup">New button</string>
+    <string name="tv_inside_popup">Large text</string>
 </resources>
