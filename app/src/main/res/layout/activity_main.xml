@@ -8,11 +8,13 @@
         android:id="@+id/btnPopUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_popup" />
+        android:text="@string/btn_popup"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/btnAlertDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_alert" />
+        android:text="@string/btn_alert"
+        android:onClick="onClick"/>
 </LinearLayout>

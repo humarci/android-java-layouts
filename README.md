@@ -35,3 +35,37 @@ Add some string values:
         android:text="@string/btn_alert" />
 </LinearLayout>
 ```
+
+# 👉 Step 2:
+
+Create onClick on UI:
+```XML
+android:onClick="onClick"
+```
+
+Use onClick in `MainActivity.java`:
+```JAVA
+public void onClick(View view){
+        switch (view.getId()) {
+            case R.id.btnPopUp:
+                showPopUp(view);
+                break;
+            case R.id.btnAlertDialog:
+                showAlertDialog("This is the alert dialog message");
+                break;
+        }
+    }
+```
+
+Create the methods:
+```JAVA
+private void showPopUp(View view){
+        LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+        //final View popUpView = layoutInflater.inflate(R.id.popUpTest, null);
+
+    }
+
+    private void showAlertDialog(String msg){
+
+    }
+```
