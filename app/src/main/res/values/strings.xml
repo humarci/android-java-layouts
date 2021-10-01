@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LayoutDemo</string>
+    <string name="btn_popup">PopUp</string>
+    <string name="btn_alert">AlertDialog</string>
 </resources>
